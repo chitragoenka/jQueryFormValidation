@@ -28,6 +28,10 @@ if (required[i] === '') {
   // Add warning class to corresponding label
     $('label').eq(i).addClass('warning');
 
+    $('input').eq(i).on('change', function() { //to change the color to black as we fill the field
+        $('label').eq(i).removeClass('warning')
+    })
+
    } else {
     // Remove error message and warning class
     $('#message').text('').removeClass('warning');
@@ -43,11 +47,7 @@ if ($('label.warning').length === 0) {
       $("#pre-form h2").text("Thanks for your feedback!");
     }
 
-    // Add input event to change label color to black when typing
-  $("#name, #email, #phone").on("input", function() {
-    var inputId = $(this).attr("id");
-    $("label').inputId(i).removeClass(warning)
-  });
+   
 
   })
 })
